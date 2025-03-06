@@ -1,6 +1,8 @@
 package com.app.forum.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -43,4 +45,18 @@ public class StudentController {
     public void deleteStudent(@PathVariable int id) {
         studentService.deleteStudent(id);
     }
+
+    @PostMapping("/students/login")
+    public Map<String, Object> loginStudent(@RequestBody Student student) {
+        Boolean isAuth = studentService.loginStudent(student);
+        Map<String, Object> response = new HashMap<>();
+        response.put("isAuth", isAuth);
+        return response;
+    }
+    
+    @GetMapping("/profile/{username}")
+    public Student getProfileStudent(@PathVariable String username) {
+        return studentService.getProfileStudent(username);
+    }
 }
+    

@@ -1,0 +1,240 @@
+/* Global Reset */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Genel sayfa düzeni */
+.home-page {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background-color: #eee;
+  font-family: Arial, sans-serif;
+}
+
+/* Üst kısım (header) */
+.header {
+  width: 100vw;
+  background-color: #333;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Auth butonları: yan yana */
+.auth-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Profile Logo in Header: Sağda Auth butonlarının yanında */
+.auth-section {
+  display: flex;
+  align-items: center;
+}
+
+.profile-logo {
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+.profile-logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: block;
+}
+
+/* İçerik alanı */
+.content {
+  width: 100vw;
+  flex: 1;
+  display: flex;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+/* Sol kenar çubuğu */
+.sidebar {
+  background-color: #fff;
+  padding: 1rem;
+  width: 20%;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2 {
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Forum konuları */
+.forum-topics {
+  flex: 1;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.forum-topics h1 {
+  margin: 0 0 1rem;
+  color: #333;
+}
+
+.topic-card {
+  border-bottom: 1px solid #ccc;
+  padding: 0.8rem 0;
+  transition: background-color 0.2s;
+}
+
+.topic-card:hover {
+  background-color: #f9f9f9;
+}
+
+.topic-card h2 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #007bff;
+}
+
+.topic-card p {
+  margin: 0.5rem 0 0;
+  color: #666;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.actions button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.actions button:hover {
+  background-color: #0056b3;
+}
+
+/* Alt kısım (footer) */
+.footer {
+  width: 100vw;
+  text-align: center;
+  padding: 1rem;
+  background-color: #333;
+  color: #fff;
+  margin: 0;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .main-nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  .content {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .sidebar,
+  .forum-topics {
+    width: 100%;
+  }
+  
+  .auth-buttons {
+    margin-top: 0.5rem;
+  }
+}
+
+.chat-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.chat-button:hover {
+  background-color: #0056b3;
+}
+
+.chat-sidebar {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 300px;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 768px) {
+  .chat-sidebar {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    width: calc(100% - 20px);
+    max-width: 300px;
+  }
+}
